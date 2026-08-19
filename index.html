@@ -105,39 +105,22 @@ section{padding:30px 0 8px}
 .glass h4{font-size:17px;font-weight:600;margin-bottom:8px}
 .glass p{font-size:14.5px;line-height:1.5;color:#333}
 
-/* ===== аккордеон-гармошка ===== */
-.acc{margin-top:16px}
+/* ===== список с цифрами: раскладывается гармошкой по скроллу ===== */
+.acc{margin-top:16px;perspective:900px}
 .acc-item{
+  display:flex;align-items:center;gap:16px;
   border:1px solid var(--line);border-radius:18px;background:#fff;
-  margin-top:10px;overflow:hidden;
-  transition:background .4s ease,border-color .4s ease;
+  margin-top:10px;padding:18px 18px;
+  transform-origin:top center;
+  transition:background .45s ease,border-color .45s ease;
 }
-.acc-item.open{background:var(--sage-200);border-color:transparent}
-.acc-head{
-  display:flex;align-items:center;gap:14px;width:100%;
-  padding:16px 18px;text-align:left;
-}
+.acc-item.active{background:var(--sage-200);border-color:transparent}
 .acc-num{
-  font-family:'Inter Tight',sans-serif;font-weight:300;font-size:34px;line-height:.9;
-  letter-spacing:-.03em;min-width:46px;color:var(--ink);
+  font-family:'Inter Tight',sans-serif;font-weight:300;font-size:38px;line-height:.9;
+  letter-spacing:-.03em;min-width:52px;color:var(--ink);
 }
-.acc-title{font-size:16.5px;font-weight:600;line-height:1.25;flex:1;color:var(--ink)}
-.acc-chev{
-  width:34px;height:34px;border-radius:50%;background:var(--btn-black);flex:0 0 auto;
-  display:inline-flex;align-items:center;justify-content:center;
-  transition:transform .4s cubic-bezier(.34,1.56,.64,1);
-}
-.acc-chev svg{width:13px;height:13px;stroke:#fff}
-.acc-item.open .acc-chev{transform:rotate(90deg)}
-.acc-body{
-  display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.4,0,.2,1);
-}
-.acc-item.open .acc-body{grid-template-rows:1fr}
-.acc-body-in{overflow:hidden}
-.acc-body-in p{
-  padding:0 18px 16px 78px;font-size:15px;line-height:1.55;color:#2c2c28;
-}
-@media(max-width:420px){.acc-body-in p{padding-left:18px}}
+.acc-text{font-size:16.5px;font-weight:500;line-height:1.35;flex:1;color:var(--ink)}
+.acc-text b{font-weight:600}
 
 /* ===== интрига ===== */
 .arrow-circle{
@@ -276,30 +259,12 @@ section{padding:30px 0 8px}
   <section>
     <h2 class="h-sec">Узнаёшь себя?</h2>
     <div class="acc" id="accPain">
-      <div class="acc-item open">
-        <button class="acc-head" type="button"><span class="acc-num">01</span><span class="acc-title">Сон не восстанавливает</span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span></button>
-        <div class="acc-body"><div class="acc-body-in"><p>Спишь 8 часов и просыпаешься уставшей.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-head" type="button"><span class="acc-num">02</span><span class="acc-title">Горсть таблеток вслепую</span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span></button>
-        <div class="acc-body"><div class="acc-body-in"><p>Каждое утро горсть таблеток, и непонятно, работает ли хоть одна.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-head" type="button"><span class="acc-num">03</span><span class="acc-title">К вечеру ноль сил</span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span></button>
-        <div class="acc-body"><div class="acc-body-in"><p>К вечеру нет сил ни на детей, ни на мужа, ни на себя.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-head" type="button"><span class="acc-num">04</span><span class="acc-title">Результат держится неделю</span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span></button>
-        <div class="acc-body"><div class="acc-body-in"><p>Пробовала спорт, ПП, медитации: результат держится неделю.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-head" type="button"><span class="acc-num">05</span><span class="acc-title">Страшно болеть в новой стране</span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span></button>
-        <div class="acc-body"><div class="acc-body-in"><p>В новой стране страшно болеть: врачи дорогие, система непонятная.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-head" type="button"><span class="acc-num">06</span><span class="acc-title">Не узнаёшь себя на фото</span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span></button>
-        <div class="acc-body"><div class="acc-body-in"><p>Смотришь на своё фото пятилетней давности и не узнаёшь себя.</p></div></div>
-      </div>
+      <div class="acc-item"><span class="acc-num">01</span><span class="acc-text">Спишь 8 часов и просыпаешься уставшей</span></div>
+      <div class="acc-item"><span class="acc-num">02</span><span class="acc-text">Каждое утро горсть таблеток, и непонятно, работает ли хоть одна</span></div>
+      <div class="acc-item"><span class="acc-num">03</span><span class="acc-text">К вечеру нет сил ни на детей, ни на мужа, ни на себя</span></div>
+      <div class="acc-item"><span class="acc-num">04</span><span class="acc-text">Пробовала спорт, ПП, медитации: результат держится неделю</span></div>
+      <div class="acc-item"><span class="acc-num">05</span><span class="acc-text">В новой стране страшно болеть: врачи дорогие, система непонятная</span></div>
+      <div class="acc-item"><span class="acc-num">06</span><span class="acc-text">Смотришь на своё фото пятилетней давности и не узнаёшь себя</span></div>
     </div>
     <p class="txt" style="margin-top:16px">Если узнала себя хотя бы в двух, дальше читай внимательно.</p>
   </section>
@@ -319,14 +284,11 @@ section{padding:30px 0 8px}
   <section>
     <h2 class="h-sec">Что будет на интенсиве</h2>
     <div class="acc" id="accProg">
-      <div class="acc-item open">
-        <button class="acc-head" type="button"><span class="acc-num">01</span><span class="acc-title">День 1. Разбор</span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span></button>
-        <div class="acc-body"><div class="acc-body-in"><p>Экспресс-диагностика по 4 сферам: отношения, здоровье, деньги, реализация. Почему не сработали витамины, диеты и спорт: разбор на уровне биохимии, а не мотивации. Истории четырёх женщин. Раскрытие: что такое клеточное питание, название ингредиента и протокол применения.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-head" type="button"><span class="acc-num">02</span><span class="acc-title">День 2. Ответы на вопросы</span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span></button>
-        <div class="acc-body"><div class="acc-body-in"><p>Живые разборы и ответы на вопросы. Разбираем лично твою ситуацию.</p></div></div>
-      </div>
+      <div class="acc-item"><span class="acc-num">01</span><span class="acc-text">Экспресс-диагностика по 4 сферам: отношения, здоровье, деньги, реализация. Найдёшь, где именно ты теряешь энергию</span></div>
+      <div class="acc-item"><span class="acc-num">02</span><span class="acc-text">Почему не сработали витамины, диеты и спорт: разбор на уровне биохимии, а не мотивации</span></div>
+      <div class="acc-item"><span class="acc-num">03</span><span class="acc-text">Истории четырёх женщин: у одной было выгорание, у другой безденежье, у третьей тело, у четвёртой отношения</span></div>
+      <div class="acc-item"><span class="acc-num">04</span><span class="acc-text">Раскрытие: что такое клеточное питание, название ингредиента и протокол применения</span></div>
+      <div class="acc-item"><span class="acc-num">05</span><span class="acc-text"><b>День 2:</b> живые разборы и ответы на вопросы. Разбираем лично твою ситуацию</span></div>
     </div>
   </section>
 
@@ -334,18 +296,9 @@ section{padding:30px 0 8px}
   <section>
     <h2 class="h-sec">Придёшь живьём, заберёшь <span class="mark">три вещи</span></h2>
     <div class="acc" id="accGet">
-      <div class="acc-item open">
-        <button class="acc-head" type="button"><span class="acc-num">01</span><span class="acc-title">Название ингредиента и протокол</span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span></button>
-        <div class="acc-body"><div class="acc-body-in"><p>Самый эффективный протокол применения: на базе целого лета испытаний и больше 2000 пользователей. Только для тех, кто пришёл живьём.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-head" type="button"><span class="acc-num">02</span><span class="acc-title">Персональный AI-тест</span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span></button>
-        <div class="acc-body"><div class="acc-body-in"><p>Покажет, где именно ты сливаешь энергию и с чего начинать. Интерактив на первом дне.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-head" type="button"><span class="acc-num">03</span><span class="acc-title">Разбор твоей ситуации</span><span class="acc-chev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span></button>
-        <div class="acc-body"><div class="acc-body-in"><p>Во второй день, столько, сколько нужно. Вопрос-ответ живьём.</p></div></div>
-      </div>
+      <div class="acc-item"><span class="acc-num">01</span><span class="acc-text">Название ингредиента и самый эффективный протокол применения: на базе целого лета испытаний и больше 2000 пользователей</span></div>
+      <div class="acc-item"><span class="acc-num">02</span><span class="acc-text">Персональный AI-тест: где именно ты сливаешь энергию и с чего начинать</span></div>
+      <div class="acc-item"><span class="acc-num">03</span><span class="acc-text">Разбор твоей ситуации во второй день, столько, сколько нужно</span></div>
     </div>
     <p class="txt" style="margin-top:16px">Запись не даст тебе ни теста, ни разбора. Поэтому приходи живьём.</p>
   </section>
@@ -472,22 +425,19 @@ gsap.utils.toArray('.h-sec').forEach(el => {
     scrollTrigger:{trigger:el, start:'top 88%', once:true}});
 });
 
-/* гармошки: пункты въезжают каскадом */
+/* пункты раскладываются гармошкой: каждая карточка откидывается сверху вниз */
 gsap.utils.toArray('.acc').forEach(acc => {
-  gsap.from(acc.querySelectorAll('.acc-item'), {y:28, opacity:0, duration:.55, ease:'power3.out', stagger:.09,
-    scrollTrigger:{trigger:acc, start:'top 86%', once:true}});
+  gsap.from(acc.querySelectorAll('.acc-item'), {
+    rotateX:-78, y:-14, opacity:0, transformOrigin:'top center',
+    duration:.7, ease:'power3.out', stagger:.11,
+    scrollTrigger:{trigger:acc, start:'top 85%', once:true}
+  });
 });
 
-/* гармошка: раскрытие по клику, в группе открыт один */
-document.querySelectorAll('.acc').forEach(acc => {
-  acc.querySelectorAll('.acc-head').forEach(head => {
-    head.addEventListener('click', () => {
-      const item = head.parentElement;
-      const wasOpen = item.classList.contains('open');
-      acc.querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
+/* пункт в центре экрана подсвечивается зелёным */
+gsap.utils.toArray('.acc-item').forEach(item => {
+  ScrollTrigger.create({trigger:item, start:'top 62%', end:'bottom 38%',
+    toggleClass:{targets:item, className:'active'}});
 });
 
 /* остальные блоки */
