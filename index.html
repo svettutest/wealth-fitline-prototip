@@ -3,386 +3,496 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Бесплатный интенсив · 21-22 сентября</title>
-<meta name="description" content="350 учёных уже подумали о твоём здоровье за тебя. Новый вид биохакинга: что это и как начать, разберём на бесплатном интенсиве.">
+<title>Формула энергии · бесплатный интенсив</title>
+<meta name="description" content="350 учёных уже подумали о твоём здоровье за тебя. Бесплатный интенсив 21-22 сентября.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@300;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@200;300;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FFFFFF;
-  --bg-desk:#EDECEA;
-  --sage-100:#EAF2E5;
-  --sage-200:#D9E8CB;
-  --sage-300:#CBDFB6;
+  --white:#FFFFFF;
+  --paper:#F1F0EE;
+  --paper-2:#EDEDEB;
+  --sage:#D9E8CB;
+  --sage-lite:#EAF2E5;
+  --sage-btn:#CBDFB6;
+  --sage-glyph:#C3D8AC;
   --ink:#111111;
-  --ink-soft:#666660;
-  --line:rgba(0,0,0,.12);
-  --btn-black:#1A1A1A;
-  --r-photo:16px;
+  --ink-2:#5F615C;
+  --line:rgba(0,0,0,.10);
+  --black:#111111;
+  --r-lg:22px;
+  --r-md:18px;
+  --r-sm:14px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',sans-serif;color:var(--ink);
-  background:var(--bg);font-size:16px;
-  -webkit-font-smoothing:antialiased;
+  font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--white);
+  font-size:16px;-webkit-font-smoothing:antialiased;
 }
 img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button{
-  font-family:inherit;cursor:pointer;border:none;background:none;
-  color:inherit;-webkit-appearance:none;appearance:none;
-  -webkit-tap-highlight-color:transparent;text-align:left;
-}
-a,a:visited{color:inherit}
+a,a:visited{color:inherit;text-decoration:none}
+button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:none;-webkit-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent}
 
-.page{background:var(--bg);max-width:520px;margin:0 auto;padding:0 16px 100px}
+.page{max-width:520px;margin:0 auto;padding:0 14px 110px;position:relative;overflow:hidden}
 @media(min-width:560px){
-  body{background:var(--bg-desk)}
-  .page{border-radius:24px;margin:24px auto;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+  body{background:#E6E5E2}
+  .page{background:var(--white);border-radius:28px;margin:22px auto;box-shadow:0 24px 70px rgba(0,0,0,.10)}
 }
-section{padding:30px 0 8px}
+section{padding:34px 0 0}
 
-.h-sec{
-  font-family:'Inter Tight',sans-serif;font-weight:600;font-size:28px;
-  line-height:1.08;text-transform:uppercase;letter-spacing:.005em;
+/* ---------- типографика ---------- */
+.title{
+  font-family:'Inter Tight',sans-serif;font-weight:700;font-size:31px;line-height:1.02;
+  text-transform:uppercase;letter-spacing:-.01em;
 }
-.mark{
-  background:var(--sage-200);border-radius:999px;padding:1px 12px 3px;
-  display:inline-block;white-space:nowrap;
+.title .hl{
+  background:var(--sage);border-radius:6px;padding:0 8px 2px;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
 }
-.txt{font-size:16px;line-height:1.55;color:var(--ink-soft)}
+.title .l2{display:block;padding-left:22px}
+.title .l3{display:block;padding-left:44px}
+.body{font-size:15.5px;line-height:1.5;color:var(--ink-2)}
+.tag{
+  display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;
+}
+.tag i{width:6px;height:6px;border-radius:50%;background:var(--ink);display:block}
 
-/* ===== ХИРО (структура блока 1 из пакета) ===== */
-.hero{padding-top:14px}
-.hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:10px}
-.logo{font-size:12px;font-weight:600;letter-spacing:.1em;line-height:1.3;text-transform:uppercase}
-.badge{
-  border:1px solid var(--line);border-radius:999px;padding:9px 16px;
-  font-size:12.5px;font-weight:600;white-space:nowrap;background:#fff;
+/* ---------- кнопки ---------- */
+.pill-cta{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:var(--sage-btn);border-radius:999px;height:60px;padding:0 6px 0 26px;
+  font-size:17px;font-weight:600;
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),background .3s;
 }
-.hero-photo{
-  position:relative;border-radius:var(--r-photo);overflow:hidden;
-  background:linear-gradient(170deg,#E2E0DC 0%,#CFCCC7 70%,#BDBAB4 100%);
-  aspect-ratio:3/3.4;
+.pill-cta:active{transform:scale(.975)}
+.pill-cta .knob{
+  width:48px;height:48px;border-radius:50%;background:var(--white);flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);
 }
-.ph-note{
-  position:absolute;top:12px;left:12px;font-size:10px;letter-spacing:.08em;
-  text-transform:uppercase;color:rgba(0,0,0,.32);z-index:1;
+.pill-cta .knob svg{width:17px;height:17px;stroke:var(--ink)}
+.pill-cta:hover .knob{transform:translateX(3px)}
+.pill-dark{
+  display:inline-flex;align-items:center;gap:12px;background:var(--black);color:#fff;
+  border-radius:999px;height:48px;padding:0 6px 0 22px;font-size:14.5px;font-weight:500;
 }
-.hero-name{
-  position:absolute;left:16px;right:16px;bottom:16px;
-  font-family:'Inter Tight',sans-serif;font-weight:500;font-size:35px;line-height:1.07;
-  text-transform:uppercase;color:#fff;letter-spacing:.01em;
-  text-shadow:0 1px 16px rgba(0,0,0,.18);
+.pill-dark .knob{width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+.pill-dark .knob svg{width:14px;height:14px;stroke:var(--ink)}
+.circle-dark{
+  width:56px;height:56px;border-radius:50%;background:var(--black);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;
 }
-.hero-name b{font-weight:600}
-.hero-sub{margin-top:14px;font-size:16.5px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.chip{
-  background:var(--sage-100);border-radius:999px;padding:11px 16px;
-  font-size:14px;font-weight:500;line-height:1.2;
+.circle-dark svg{width:19px;height:19px;stroke:#fff}
+.circle-sage{
+  width:44px;height:44px;border-radius:50%;background:var(--sage-lite);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;
 }
-.cta-main{
-  display:flex;width:100%;margin-top:16px;background:var(--sage-300);border-radius:999px;height:58px;
-  align-items:center;justify-content:space-between;padding:0 8px 0 22px;
-  font-size:16.5px;font-weight:600;color:var(--ink);
-}
-.mini-arrow{
-  width:44px;height:44px;border-radius:50%;background:var(--btn-black);
-  display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
-}
-.mini-arrow svg{width:14px;height:14px;stroke:#fff}
-.proof{margin-top:12px;font-size:13.5px;color:var(--ink-soft);text-align:center}
+.circle-sage svg{width:20px;height:20px;stroke:#7E9A5E}
 
-/* ===== бонусы: фото + стекло ===== */
-.glass-wrap{position:relative;border-radius:var(--r-photo);overflow:hidden;background:linear-gradient(155deg,#E5E3DF,#CDCAC5);min-height:400px}
+/* ---------- ХИРО ---------- */
+.head{display:flex;align-items:center;justify-content:space-between;padding:16px 4px 14px;gap:12px}
+.brand{font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:700;letter-spacing:.13em;line-height:1.25;text-transform:uppercase}
+.date-pill{
+  border:1px solid var(--line);border-radius:999px;padding:10px 16px;
+  font-size:13px;font-weight:600;white-space:nowrap;
+}
+.shot{
+  position:relative;border-radius:var(--r-lg);overflow:hidden;
+  background:linear-gradient(168deg,#E4E2DE 0%,#D2CFCA 62%,#BFBCB6 100%);
+}
+.shot.hero{aspect-ratio:1/1.2}
+.ph{
+  position:absolute;top:14px;left:14px;font-size:10px;letter-spacing:.09em;
+  text-transform:uppercase;color:rgba(0,0,0,.3);z-index:2;
+}
+.hero-h1{
+  position:absolute;left:16px;right:16px;bottom:18px;z-index:2;
+  font-family:'Inter Tight',sans-serif;font-weight:700;font-size:30px;line-height:1;
+  text-transform:uppercase;color:#fff;letter-spacing:-.015em;
+  text-shadow:0 2px 22px rgba(0,0,0,.24);
+}
+.hero-row{display:flex;gap:8px;margin-top:10px;align-items:stretch}
+.hero-note{
+  flex:1;background:var(--paper);border-radius:var(--r-md);padding:15px 18px;
+  font-size:14.5px;line-height:1.4;font-weight:500;display:flex;align-items:center;
+}
+.hero-proof{margin-top:16px;text-align:center;font-size:13.5px;color:var(--ink-2)}
+
+/* ---------- фото + стеклянная карточка ---------- */
+.shot.tall{aspect-ratio:1/1.5;margin-top:16px}
 .glass{
-  position:absolute;left:10px;right:10px;bottom:10px;
-  background:rgba(255,255,255,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-  border-radius:16px;padding:16px;
+  position:absolute;right:10px;bottom:10px;left:10%;z-index:2;
+  background:rgba(252,252,250,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-radius:var(--r-md);padding:16px;
 }
-.glass h4{font-size:17px;font-weight:600;margin-bottom:8px}
-.glass p{font-size:14.5px;line-height:1.5;color:#333}
+.glass .gh{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:9px}
+.glass h3{font-size:16px;font-weight:700;line-height:1.15}
+.glass p{font-size:13px;line-height:1.42;color:#3A3C37}
+.glass p + p{margin-top:8px}
 
-/* ===== список с цифрами: раскладывается гармошкой по скроллу ===== */
-.acc{margin-top:16px;perspective:900px}
-.acc-item{
-  display:flex;align-items:center;gap:16px;
-  border:1px solid var(--line);border-radius:18px;background:#fff;
-  margin-top:10px;padding:18px 18px;
-  transform-origin:top center;
-  transition:background .45s ease,border-color .45s ease;
+/* ---------- карточки-убеждения 2x2 ---------- */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}
+.belief{
+  position:relative;border-radius:var(--r-lg);padding:18px 14px 20px;min-height:186px;
+  display:flex;flex-direction:column;justify-content:space-between;text-align:center;overflow:hidden;
 }
-.acc-item.active{background:var(--sage-200);border-color:transparent}
-.acc-num{
-  font-family:'Inter Tight',sans-serif;font-weight:300;font-size:38px;line-height:.9;
-  letter-spacing:-.03em;min-width:52px;color:var(--ink);
+.belief.a{background:var(--sage)}
+.belief.b{background:var(--sage-lite)}
+.belief h4{font-size:16.5px;font-weight:700;line-height:1.18;position:relative;z-index:2}
+.belief p{font-size:13.5px;line-height:1.4;color:#33352F;position:relative;z-index:2}
+.belief p b{font-weight:700}
+.belief .glyph{
+  position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);
+  width:74%;opacity:.55;z-index:1;pointer-events:none;
 }
-.acc-text{font-size:16.5px;font-weight:500;line-height:1.35;flex:1;color:var(--ink)}
-.acc-text b{font-weight:600}
+.belief .glyph path,.belief .glyph circle,.belief .glyph ellipse{stroke:var(--sage-glyph);fill:none;stroke-width:2.4}
 
-/* ===== интрига ===== */
-.arrow-circle{
-  width:48px;height:48px;border-radius:50%;background:var(--btn-black);
-  display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+/* ---------- номерные строки ---------- */
+.rows{margin-top:16px;display:flex;flex-direction:column;gap:4px}
+.row{
+  display:flex;align-items:center;gap:14px;border-radius:var(--r-lg);
+  padding:20px 18px;background:var(--white);border:1px solid var(--line);
 }
-.arrow-circle svg{width:17px;height:17px;stroke:#fff}
+.row.tint{background:var(--sage-lite);border-color:transparent}
+.row.grey{background:var(--paper);border-color:transparent}
+.row .n{
+  font-family:'Inter Tight',sans-serif;font-weight:200;font-size:56px;line-height:.82;
+  letter-spacing:-.04em;min-width:74px;
+}
+.row .t{font-size:14.5px;line-height:1.45;color:#2E302B;flex:1}
+.row .t b{font-weight:700;color:var(--ink)}
 
-/* ===== карусель ===== */
-.car-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-.car-count{font-size:14px;color:var(--ink-soft);white-space:nowrap;padding-top:6px}
-.car-photo{
-  margin-top:14px;border-radius:14px;aspect-ratio:16/10;position:relative;overflow:hidden;
+/* ---------- блок «интрига»: фото + карточка ---------- */
+.split{display:flex;gap:0;align-items:stretch;margin-top:16px;position:relative}
+.split .shot{flex:0 0 44%;aspect-ratio:auto;min-height:210px;border-radius:var(--r-md)}
+.split .card{
+  flex:1;border:1px solid var(--line);border-radius:var(--r-md);
+  padding:20px 18px 20px 34px;margin-left:-16px;display:flex;align-items:center;
+  font-size:14px;line-height:1.45;background:var(--white);
 }
-.car-title{font-size:19px;font-weight:600;margin-top:14px}
-.car-text{margin-top:6px}
-.car-nav{display:flex;gap:18px;justify-content:flex-end;margin-top:10px}
-.car-nav button{font-size:22px;color:var(--ink);padding:6px}
+.split .circle-dark{position:absolute;left:38%;top:50%;transform:translate(-50%,-50%);z-index:3}
 
-/* ===== спикеры ===== */
-.spk{border:1px solid var(--line);border-radius:18px;padding:14px;margin-top:12px;display:flex;gap:14px}
-.spk-photo{
-  width:118px;flex:0 0 auto;aspect-ratio:3/4;border-radius:12px;
-  background:linear-gradient(165deg,#E0DEDA,#C9C6C0);position:relative;overflow:hidden;
+/* ---------- карусель ---------- */
+.car-strip{
+  position:relative;margin-top:18px;border-radius:var(--r-lg);overflow:hidden;
+  aspect-ratio:2.35/1;background:linear-gradient(150deg,#E2E0DC,#C9C6C1);
 }
-.spk-photo .ph-note{font-size:8px;top:8px;left:8px}
-.spk-info h4{font-family:'Inter Tight',sans-serif;font-size:20px;font-weight:600;text-transform:uppercase;line-height:1.15}
-.spk-info p{font-size:14.5px;line-height:1.5;color:#333;margin-top:8px}
+.car-top{
+  position:absolute;right:14px;top:12px;z-index:3;
+  background:rgba(255,255,255,.9);border-radius:999px;padding:6px 12px;
+  font-size:13px;font-weight:600;color:var(--ink);
+}
+.car-card{background:var(--paper);border-radius:var(--r-lg);padding:20px 18px;margin-top:10px}
+.car-card h3{font-size:19px;font-weight:700;line-height:1.2}
+.car-card p{font-size:14.5px;line-height:1.5;color:var(--ink-2);margin-top:10px}
+.car-nav{display:flex;gap:20px;justify-content:flex-end;margin-top:14px}
+.car-nav button{font-size:22px;line-height:1;padding:4px;transition:transform .2s}
+.car-nav button:active{transform:scale(.85)}
 
-/* ===== для кого ===== */
-.forwho{display:flex;flex-direction:column;gap:10px;margin-top:16px}
-.who{
-  background:var(--sage-100);border-radius:16px;padding:15px 18px;
-  font-size:15.5px;line-height:1.45;font-weight:500;
+/* ---------- карточки-услуги ---------- */
+.offer{margin-top:22px}
+.offer .n{
+  font-family:'Inter Tight',sans-serif;font-weight:200;font-size:56px;line-height:.85;
+  letter-spacing:-.04em;display:block;margin-bottom:10px;
 }
+.offer-card{
+  position:relative;border-radius:var(--r-lg);padding:20px 18px;
+  background:linear-gradient(160deg,var(--paper) 0%,var(--paper-2) 100%);
+}
+.offer-card .circle-sage{position:absolute;right:16px;top:16px}
+.offer-card h3{font-size:17px;font-weight:700;line-height:1.25;padding-right:56px}
+.offer-card p{font-size:14px;line-height:1.45;color:var(--ink-2);margin-top:10px}
+.offer-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:18px}
+.offer-foot .lbl{font-size:11px;letter-spacing:.05em;color:var(--ink-2)}
+.offer-foot .val{font-size:17px;font-weight:700;margin-top:3px}
 
-/* ===== отзывы ===== */
-.label{
-  display:inline-block;border:1px solid var(--line);border-radius:999px;
-  padding:9px 16px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;background:#fff;
+/* ---------- спикеры ---------- */
+.spk{display:flex;gap:12px;align-items:stretch;margin-top:10px}
+.spk .shot{flex:0 0 40%;aspect-ratio:3/4}
+.spk .info{
+  flex:1;background:var(--paper);border-radius:var(--r-md);padding:16px;
+  display:flex;flex-direction:column;justify-content:center;
 }
-.ava-row{display:flex;align-items:center;margin-top:14px}
+.spk h4{font-family:'Inter Tight',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;line-height:1.1}
+.spk p{font-size:13.5px;line-height:1.45;color:var(--ink-2);margin-top:8px}
+
+/* ---------- отзывы ---------- */
+.center{text-align:center}
+.avas{display:flex;justify-content:center;margin-top:14px}
 .ava{
-  width:46px;height:46px;border-radius:50%;border:2px solid #fff;
-  background:linear-gradient(150deg,#D8D5D0,#C4C1BB);margin-left:-11px;flex:0 0 auto;
+  width:52px;height:52px;border-radius:50%;border:3px solid var(--white);margin-left:-14px;
+  background:linear-gradient(150deg,#DAD7D2,#BCB9B3);
 }
 .ava:first-child{margin-left:0}
-.ava.green{background:var(--sage-300);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.ava.sage{background:var(--sage-btn);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
 .review{
-  border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-top:14px;
-  font-size:14.5px;line-height:1.55;color:#333;background:#fff;
+  border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 18px;margin-top:16px;
+  font-size:14px;line-height:1.55;color:var(--ink-2);
 }
-.review b{display:block;font-size:15px;margin-bottom:5px}
-.client-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.client-card{
-  border-radius:14px;aspect-ratio:3/4;position:relative;overflow:hidden;
-  background:linear-gradient(165deg,#DCD9D4,#B7B4AE);
-}
-.client-card .cap{
-  position:absolute;left:0;right:0;bottom:0;padding:30px 12px 12px;
-  background:linear-gradient(to top,rgba(0,0,0,.55),transparent);
-  color:#fff;font-size:13px;line-height:1.35;
+.review b{display:block;color:var(--ink);font-size:15px;margin-bottom:8px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
+.pair .shot{aspect-ratio:3/4}
+.pair .cap{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;padding:34px 12px 13px;
+  background:linear-gradient(to top,rgba(0,0,0,.6),transparent);
+  color:#fff;font-size:13px;line-height:1.3;font-weight:500;
 }
 
-/* ===== финал ===== */
-.final-wrap{border:1px solid var(--line);border-radius:20px;padding:20px;margin-top:16px;text-align:center}
-.final-wrap .txt{font-size:15.5px}
-.foot{margin-top:28px;font-size:12.5px;color:var(--ink-soft);text-align:center;line-height:1.5}
+/* ---------- финал ---------- */
+.final{
+  margin-top:20px;border-radius:var(--r-lg);padding:24px 18px;text-align:center;
+  background:linear-gradient(165deg,var(--sage-lite),#F6FAF1);
+}
+.final h2{font-family:'Inter Tight',sans-serif;font-size:26px;font-weight:700;text-transform:uppercase;line-height:1.05}
+.final p{font-size:14.5px;line-height:1.5;color:#41443C;margin-top:12px}
+.final .pill-cta{margin-top:18px}
+.final .small{font-size:12px;color:var(--ink-2);margin-top:12px}
+.foot{margin-top:26px;text-align:center;font-size:11.5px;line-height:1.5;color:var(--ink-2)}
 
-/* ===== sticky ===== */
+/* ---------- sticky ---------- */
 .sticky{
-  position:fixed;left:0;right:0;bottom:0;z-index:40;
-  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-  transform:translateY(110%);transition:transform .35s ease;
+  position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  transform:translateY(130%);transition:transform .38s cubic-bezier(.4,0,.2,1);
 }
-.sticky .inner{max-width:488px;margin:0 auto}
 .sticky.on{transform:none}
-.sticky .cta-main{margin-top:0;box-shadow:0 10px 30px rgba(0,0,0,.16);height:54px}
+.sticky .inner{max-width:492px;margin:0 auto}
+.sticky .pill-cta{height:56px;box-shadow:0 12px 34px rgba(0,0,0,.18)}
 @media(min-width:560px){.sticky{display:none}}
 
-/* ===== микро-анимации ===== */
-.cta-main,.arrow-circle{transition:transform .25s cubic-bezier(.34,1.56,.64,1),background .3s}
-.cta-main:active{transform:scale(.97)}
-.cta-main:hover{background:#BFD6A6}
-.mini-arrow{transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
-.cta-main:hover .mini-arrow{transform:translateX(3px)}
-@keyframes ctaPulse{
-  0%,100%{box-shadow:0 0 0 0 rgba(203,223,182,.55)}
-  50%{box-shadow:0 0 0 10px rgba(203,223,182,0)}
+/* ---------- декоративное свечение ---------- */
+.glow{
+  position:absolute;width:320px;height:320px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(203,223,182,.55),rgba(203,223,182,0) 68%);
 }
-.pulse{animation:ctaPulse 2.4s ease-out infinite}
-.car-photo .fill-layer{position:absolute;inset:0;transition:opacity .45s ease}
-.hero-photo,.glass-wrap,.car-photo{background-size:100% 145%!important}
-@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+section > *{position:relative;z-index:1}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <main class="page">
 
-  <!-- БЛОК 1: ПЕРВЫЙ ЭКРАН -->
-  <section class="hero">
-    <div class="hero-top">
-      <div class="logo">Формула<br>энергии</div>
-      <span class="badge">21-22 сентября · 19:00</span>
+  <!-- ХИРО -->
+  <header class="head">
+    <div class="brand">Формула<br>энергии</div>
+    <span class="date-pill">21-22 сентября · 19:00</span>
+  </header>
+
+  <section style="padding-top:0">
+    <div class="shot hero" id="heroShot">
+      <span class="ph">[фото Оксаны: сообщение 51]</span>
+      <h1 class="hero-h1">350 учёных уже подумали о твоём здоровье за тебя</h1>
     </div>
-    <div class="hero-photo">
-      <span class="ph-note">[фото Оксаны: сообщение 51 в чате]</span>
-      <h1 class="hero-name"><b>350 учёных</b> уже подумали о твоём здоровье за тебя</h1>
+    <div class="hero-row">
+      <div class="hero-note">Твоя задача: один стакан утром и один вечером. От $50 в месяц</div>
     </div>
-    <p class="txt hero-sub">Твоя задача: один стакан утром и один вечером. От $50 в месяц. Новый вид биохакинга, который заменяет полку из 350 банок витаминов. Что это и как начать, разберём на бесплатном интенсиве.</p>
-    <div class="chips">
-      <span class="chip">Без диет и спорта</span>
-      <span class="chip">5 минут утром, 5 вечером</span>
-      <span class="chip">Тело, а не сила воли</span>
-    </div>
-    <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="cta-main">занять место и получить видео
-      <span class="mini-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    <p class="body" style="margin-top:10px">Новый вид биохакинга, который заменяет полку из 350 банок витаминов. Что это и как начать, разберём на бесплатном интенсиве.</p>
+    <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="pill-cta" style="margin-top:8px">занять место
+      <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
-    <p class="proof">Больше 70 000 человек уже в системе · участие бесплатное</p>
+    <p class="hero-proof">Больше 70 000 человек уже в системе · участие бесплатное</p>
   </section>
 
-  <!-- БЛОК 2: БОНУСЫ ЗА РЕГИСТРАЦИЮ -->
+  <!-- ЧЕТЫРЕ УБЕЖДЕНИЯ -->
   <section>
-    <h2 class="h-sec">Сразу после регистрации <span class="mark">два подарка</span></h2>
-    <div class="glass-wrap" style="margin-top:16px">
-      <span class="ph-note">[фото 2: лайфстайл Оксаны]</span>
+    <div class="grid2">
+      <div class="belief a">
+        <h4>Без диет<br>и спорта</h4>
+        <svg class="glyph" viewBox="0 0 100 100"><path d="M22 62c14-30 42-30 56 0"/><path d="M50 24v14"/><path d="M30 34l8 10"/><path d="M70 34l-8 10"/></svg>
+        <p><b>никаких запретов</b>, подсчёта калорий и зала через силу</p>
+      </div>
+      <div class="belief b">
+        <h4>5 минут утром,<br>5 вечером</h4>
+        <svg class="glyph" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30"/><path d="M50 32v20l14 9"/></svg>
+        <p><b>меньше</b>, чем ты тратишь на выбор витаминов в аптеке</p>
+      </div>
+      <div class="belief b">
+        <h4>Тело,<br>а не сила воли</h4>
+        <svg class="glyph" viewBox="0 0 100 100"><path d="M28 70c0-24 44-24 44-42"/><path d="M28 30c0 24 44 24 44 42"/><circle cx="50" cy="50" r="7"/></svg>
+        <p><b>энергия</b> это то, что реально доехало до клетки</p>
+      </div>
+      <div class="belief a">
+        <h4>От $50<br>в месяц</h4>
+        <svg class="glyph" viewBox="0 0 100 100"><path d="M50 20v60"/><path d="M34 36c0-9 32-9 32 0s-32 9-32 18 32 9 32 0"/></svg>
+        <p><b>вместо полки банок</b> на $2000, которая не работает</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ДВА ПОДАРКА -->
+  <section>
+    <h2 class="title">Сразу после регистрации<span class="l2"><span class="hl">два подарка</span></span></h2>
+    <div class="shot tall">
+      <span class="ph">[фото 2: лайфстайл Оксаны]</span>
       <div class="glass">
-        <h4>Придут в бота за минуту</h4>
-        <p>1. Видео «Секрет одного порошка»: история женщины, которой 46, у которой четверо детей и которую останавливают на улице спросить, как она так выглядит.</p>
-        <p style="margin-top:8px">2. Интерактивный разбор «Как работает клеточное питание»: почему об этом пока не говорят в аптеках и при чём тут 350 учёных.</p>
+        <div class="gh">
+          <h3>Придут в бота за минуту</h3>
+          <span class="circle-sage"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16"/></svg></span>
+        </div>
+        <p>Видео «Секрет одного порошка»: история женщины, которой 46, у которой четверо детей и которую останавливают на улице спросить, как она так выглядит.</p>
+        <p>Интерактивный разбор «Как работает клеточное питание»: почему об этом пока не говорят в аптеках и при чём тут 350 учёных.</p>
       </div>
     </div>
   </section>
 
-  <!-- БЛОК 3: УЗНАЁШЬ СЕБЯ (гармошка) -->
+  <!-- УЗНАЁШЬ СЕБЯ -->
   <section>
-    <h2 class="h-sec">Узнаёшь себя?</h2>
-    <div class="acc" id="accPain">
-      <div class="acc-item"><span class="acc-num">01</span><span class="acc-text">Спишь 8 часов и просыпаешься уставшей</span></div>
-      <div class="acc-item"><span class="acc-num">02</span><span class="acc-text">Каждое утро горсть таблеток, и непонятно, работает ли хоть одна</span></div>
-      <div class="acc-item"><span class="acc-num">03</span><span class="acc-text">К вечеру нет сил ни на детей, ни на мужа, ни на себя</span></div>
-      <div class="acc-item"><span class="acc-num">04</span><span class="acc-text">Пробовала спорт, ПП, медитации: результат держится неделю</span></div>
-      <div class="acc-item"><span class="acc-num">05</span><span class="acc-text">В новой стране страшно болеть: врачи дорогие, система непонятная</span></div>
-      <div class="acc-item"><span class="acc-num">06</span><span class="acc-text">Смотришь на своё фото пятилетней давности и не узнаёшь себя</span></div>
+    <h2 class="title">Узнаёшь <span class="hl">себя?</span></h2>
+    <div class="rows">
+      <div class="row tint"><span class="n">01</span><span class="t">Спишь 8 часов и просыпаешься уставшей</span></div>
+      <div class="row"><span class="n">02</span><span class="t">Каждое утро горсть таблеток, и непонятно, работает ли хоть одна</span></div>
+      <div class="row grey"><span class="n">03</span><span class="t">К вечеру нет сил ни на детей, ни на мужа, ни на себя</span></div>
+      <div class="row"><span class="n">04</span><span class="t">Пробовала спорт, ПП, медитации: результат держится неделю</span></div>
+      <div class="row grey"><span class="n">05</span><span class="t">В новой стране страшно болеть: врачи дорогие, система непонятная</span></div>
+      <div class="row"><span class="n">06</span><span class="t">Смотришь на своё фото пятилетней давности и не узнаёшь себя</span></div>
     </div>
-    <p class="txt" style="margin-top:16px">Если узнала себя хотя бы в двух, дальше читай внимательно.</p>
+    <p class="body" style="margin-top:16px">Если узнала себя хотя бы в двух, дальше читай внимательно.</p>
   </section>
 
-  <!-- БЛОК 4: ИНТРИГА -->
+  <!-- ИНТРИГА -->
   <section>
-    <h2 class="h-sec">Каждые несколько лет появляется вещь, в которую сначала <span class="mark">никто не верит</span></h2>
-    <p class="txt" style="margin-top:14px">Когда-то суперфудом был подорожник, и все смеялись. Потом спирулина: крутили пальцем у виска, теперь она в каждой аптеке. Потом Оземпик: сначала скандал, теперь о нём говорит весь мир.</p>
-    <p class="txt" style="margin-top:10px">Сейчас появился следующий инструмент. Называется клеточное питание. Его пока нет в аптеках, и им уже пользуются те, кто считает свои деньги и время: вместо полки банок на $2000 в год, один стакан утром и один вечером, от $50 в месяц.</p>
-    <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;margin-top:16px">
-      <span class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      <p style="font-size:14px;font-weight:600;line-height:1.4">Что за ингредиент и по какому протоколу его принимать, разберём на интенсиве. Бесплатно.</p>
+    <span class="glow" style="right:-90px;top:0"></span>
+    <h2 class="title">Каждые несколько лет<span class="l2">появляется вещь,</span><span class="l3">в которую сначала <span class="hl">не верят</span></span></h2>
+    <div class="split">
+      <div class="shot"><span class="ph">[фото 3]</span></div>
+      <div class="card">Когда-то суперфудом был подорожник, и все смеялись. Потом спирулина. Потом Оземпик: сначала скандал, теперь о нём говорит весь мир.</div>
+      <span class="circle-dark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+    <p class="body" style="margin-top:16px">Сейчас появился следующий инструмент. Называется клеточное питание. Его пока нет в аптеках, и им уже пользуются те, кто считает свои деньги и время: вместо полки банок на $2000 в год, один стакан утром и один вечером, от $50 в месяц.</p>
+    <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="pill-dark" style="margin-top:16px">узнать, что это
+      <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
   </section>
 
-  <!-- БЛОК 5: ПРОГРАММА (гармошка) -->
+  <!-- ЧЕТЫРЕ ЖЕНЩИНЫ -->
   <section>
-    <h2 class="h-sec">Что будет на интенсиве</h2>
-    <div class="acc" id="accProg">
-      <div class="acc-item"><span class="acc-num">01</span><span class="acc-text">Экспресс-диагностика по 4 сферам: отношения, здоровье, деньги, реализация. Найдёшь, где именно ты теряешь энергию</span></div>
-      <div class="acc-item"><span class="acc-num">02</span><span class="acc-text">Почему не сработали витамины, диеты и спорт: разбор на уровне биохимии, а не мотивации</span></div>
-      <div class="acc-item"><span class="acc-num">03</span><span class="acc-text">Истории четырёх женщин: у одной было выгорание, у другой безденежье, у третьей тело, у четвёртой отношения</span></div>
-      <div class="acc-item"><span class="acc-num">04</span><span class="acc-text">Раскрытие: что такое клеточное питание, название ингредиента и протокол применения</span></div>
-      <div class="acc-item"><span class="acc-num">05</span><span class="acc-text"><b>День 2:</b> живые разборы и ответы на вопросы. Разбираем лично твою ситуацию</span></div>
+    <h2 class="title">Четыре женщины,<span class="l2">одна <span class="hl">формула</span></span></h2>
+    <div class="car-strip" id="carShot">
+      <span class="ph" id="carNote">[фото: история 1]</span>
+      <span class="car-top"><span id="carIdx">1</span>/4</span>
     </div>
-  </section>
-
-  <!-- БЛОК 6: ЧТО ПОЛУЧИШЬ ЗА ПРИХОД (гармошка) -->
-  <section>
-    <h2 class="h-sec">Придёшь живьём, заберёшь <span class="mark">три вещи</span></h2>
-    <div class="acc" id="accGet">
-      <div class="acc-item"><span class="acc-num">01</span><span class="acc-text">Название ингредиента и самый эффективный протокол применения: на базе целого лета испытаний и больше 2000 пользователей</span></div>
-      <div class="acc-item"><span class="acc-num">02</span><span class="acc-text">Персональный AI-тест: где именно ты сливаешь энергию и с чего начинать</span></div>
-      <div class="acc-item"><span class="acc-num">03</span><span class="acc-text">Разбор твоей ситуации во второй день, столько, сколько нужно</span></div>
-    </div>
-    <p class="txt" style="margin-top:16px">Запись не даст тебе ни теста, ни разбора. Поэтому приходи живьём.</p>
-  </section>
-
-  <!-- КАРУСЕЛЬ: 4 ЖЕНЩИНЫ -->
-  <section>
-    <div class="car-head">
-      <h2 class="h-sec">Четыре женщины,<br>одна формула</h2>
-      <span class="car-count"><span id="carIdx">1</span>/4</span>
-    </div>
-    <div class="car-photo" id="carPhoto" style="background:linear-gradient(150deg,#DACFA8,#B39B62)">
-      <span class="ph-note" id="carNote">[фото: история 1, из чата 59-69]</span>
-    </div>
-    <h3 class="car-title" id="carTitle">Энергия</h3>
-    <p class="txt car-text" id="carText">Выгорание и «жизнь на кофе». Первое, что вернулось: сон и утро без будильника на пятой попытке.</p>
-    <div class="car-nav">
-      <button id="carPrev" aria-label="Назад">←</button>
-      <button id="carNext" aria-label="Вперёд">→</button>
-    </div>
-  </section>
-
-  <!-- БЛОК 7: СПИКЕРЫ -->
-  <section>
-    <h2 class="h-sec">Кто ведёт</h2>
-    <div class="spk">
-      <div class="spk-photo"><span class="ph-note">[фото Оксаны]</span></div>
-      <div class="spk-info">
-        <h4>Оксана</h4>
-        <p>46 лет, четверо детей, 5 лет ведёт свою онлайн-школу для женщин. Переехала в США и на своём опыте собрала систему, о которой расскажет на интенсиве. Вчера на автобусной остановке ей не поверили, что ей 46.</p>
-      </div>
-    </div>
-    <div class="spk">
-      <div class="spk-photo"><span class="ph-note">[фото Сергея]</span></div>
-      <div class="spk-info">
-        <h4>Сергей</h4>
-        <p>Предприниматель, муж Оксаны. Мышление, деньги и реализация: как состояние тела решает, сколько ты зарабатываешь.</p>
-      </div>
-    </div>
-    <div class="spk">
-      <div class="spk-photo"><span class="ph-note">[фото Марины]</span></div>
-      <div class="spk-info">
-        <h4>Марина</h4>
-        <p>Экспертная часть. Тело, физиология и энергия с медицинской точки зрения: без эзотерики, на фактах.</p>
+    <div class="car-card">
+      <h3 id="carTitle">Энергия</h3>
+      <p id="carText">Выгорание и «жизнь на кофе». Первое, что вернулось: сон и утро без будильника на пятой попытке.</p>
+      <div class="car-nav">
+        <button id="carPrev" aria-label="Назад">←</button>
+        <button id="carNext" aria-label="Вперёд">→</button>
       </div>
     </div>
   </section>
 
-  <!-- БЛОК 8: ДЛЯ КОГО -->
+  <!-- ЧТО БУДЕТ НА ИНТЕНСИВЕ -->
   <section>
-    <h2 class="h-sec">Тебе сюда, если ты</h2>
-    <div class="forwho">
-      <div class="who">Мама, которая живёт на кофе и держится на честном слове</div>
-      <div class="who">Женщина 35+, у которой «всё нормально», но энергии нет</div>
-      <div class="who">Эмигрантка, которой дорого и страшно болеть в новой стране</div>
-      <div class="who">Та, кто хочет тело и лицо «до», а не «после 40»</div>
+    <h2 class="title">Что будет<span class="l2">на <span class="hl">интенсиве</span></span></h2>
+    <div class="rows">
+      <div class="row tint"><span class="n">01</span><span class="t"><b>День 1.</b> Экспресс-диагностика по 4 сферам: отношения, здоровье, деньги, реализация. Найдёшь, где именно ты теряешь энергию</span></div>
+      <div class="row"><span class="n">02</span><span class="t">Почему не сработали витамины, диеты и спорт: разбор на уровне биохимии, а не мотивации</span></div>
+      <div class="row grey"><span class="n">03</span><span class="t">Истории четырёх женщин: у одной было выгорание, у другой безденежье, у третьей тело, у четвёртой отношения</span></div>
+      <div class="row"><span class="n">04</span><span class="t">Раскрытие: что такое клеточное питание, название ингредиента и протокол применения</span></div>
+      <div class="row tint"><span class="n">05</span><span class="t"><b>День 2.</b> Живые разборы и ответы на вопросы. Разбираем лично твою ситуацию</span></div>
+    </div>
+  </section>
+
+  <!-- ЧТО ЗАБЕРЁШЬ -->
+  <section>
+    <span class="glow" style="left:-100px;top:40px"></span>
+    <h2 class="title">Придёшь живьём,<span class="l2">заберёшь <span class="hl">три вещи</span></span></h2>
+
+    <div class="offer">
+      <span class="n">01</span>
+      <div class="offer-card">
+        <span class="circle-sage"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M9 3h6M10 3v5L5 17a4 4 0 0 0 4 6h6a4 4 0 0 0 4-6L14 8V3"/></svg></span>
+        <h3>Название ингредиента и протокол применения</h3>
+        <p>Самый эффективный протокол на базе целого лета испытаний и больше 2000 пользователей</p>
+        <div class="offer-foot">
+          <div><div class="lbl">формат</div><div class="val">только живьём</div></div>
+          <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="pill-dark">забрать <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="offer">
+      <span class="n">02</span>
+      <div class="offer-card">
+        <span class="circle-sage"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <h3>Персональный AI-тест</h3>
+        <p>Покажет, где именно ты сливаешь энергию и с чего начинать</p>
+        <div class="offer-foot">
+          <div><div class="lbl">формат</div><div class="val">первый день</div></div>
+          <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="pill-dark">забрать <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="offer">
+      <span class="n">03</span>
+      <div class="offer-card">
+        <span class="circle-sage"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="14" rx="4"/><path d="M8 10h8M8 14h5"/></svg></span>
+        <h3>Разбор твоей ситуации</h3>
+        <p>Во второй день, столько, сколько нужно</p>
+        <div class="offer-foot">
+          <div><div class="lbl">формат</div><div class="val">вопрос-ответ</div></div>
+          <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="pill-dark">забрать <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+    <p class="body" style="margin-top:18px">Запись не даст тебе ни теста, ни разбора. Поэтому приходи живьём.</p>
+  </section>
+
+  <!-- СПИКЕРЫ -->
+  <section>
+    <h2 class="title">Кто <span class="hl">ведёт</span></h2>
+    <div class="spk">
+      <div class="shot"><span class="ph">[фото Оксаны]</span></div>
+      <div class="info"><h4>Оксана</h4><p>46 лет, четверо детей, 5 лет ведёт свою онлайн-школу для женщин. Переехала в США и на своём опыте собрала систему, о которой расскажет на интенсиве.</p></div>
+    </div>
+    <div class="spk">
+      <div class="shot"><span class="ph">[фото Сергея]</span></div>
+      <div class="info"><h4>Сергей</h4><p>Предприниматель, муж Оксаны. Мышление, деньги и реализация: как состояние тела решает, сколько ты зарабатываешь.</p></div>
+    </div>
+    <div class="spk">
+      <div class="shot"><span class="ph">[фото Марины]</span></div>
+      <div class="info"><h4>Марина</h4><p>Экспертная часть. Тело, физиология и энергия с медицинской точки зрения: без эзотерики, на фактах.</p></div>
+    </div>
+  </section>
+
+  <!-- ДЛЯ КОГО -->
+  <section>
+    <h2 class="title">Тебе сюда,<span class="l2">если <span class="hl">ты</span></span></h2>
+    <div class="rows">
+      <div class="row grey"><span class="t" style="font-size:15px">Мама, которая живёт на кофе и держится на честном слове</span></div>
+      <div class="row"><span class="t" style="font-size:15px">Женщина 35+, у которой «всё нормально», но энергии нет</span></div>
+      <div class="row grey"><span class="t" style="font-size:15px">Эмигрантка, которой дорого и страшно болеть в новой стране</span></div>
+      <div class="row"><span class="t" style="font-size:15px">Та, кто хочет тело и лицо «до», а не «после 40»</span></div>
     </div>
   </section>
 
   <!-- ОТЗЫВЫ -->
-  <section>
-    <span class="label">отзывы</span>
-    <div class="ava-row">
-      <span class="ava"></span><span class="ava"></span><span class="ava"></span>
-      <span class="ava green">70к</span>
+  <section class="center">
+    <span class="tag" style="justify-content:center">отзывы</span>
+    <div class="avas">
+      <span class="ava"></span><span class="ava"></span><span class="ava"></span><span class="ava sage">70к</span>
     </div>
-    <div class="review">
+    <div class="review" style="text-align:left">
       <b>[заглушка: скрин отзыва из чата]</b>
-      Сюда встанут 2-3 реальных скрина из закрытого чата на 70 000 участников. Нужны скрины и 3 аватарки.
+      Сюда встанут 2-3 реальных скрина из закрытого чата на 70 000 участников. Нужны скрины и три аватарки.
     </div>
-    <div class="client-cards">
-      <div class="client-card"><span class="ph-note">[фото участницы]</span><span class="cap">Арина, в системе с 2021 года</span></div>
-      <div class="client-card"><span class="ph-note">[фото участницы]</span><span class="cap">Марина, до и после</span></div>
+    <div class="pair">
+      <div class="shot"><span class="ph">[фото]</span><span class="cap">Арина, в системе с 2021 года</span></div>
+      <div class="shot"><span class="ph">[фото]</span><span class="cap">Марина, до и после</span></div>
     </div>
   </section>
 
-  <!-- БЛОК 9: ФИНАЛ -->
+  <!-- ФИНАЛ -->
   <section id="reg">
-    <h2 class="h-sec">Бесплатный интенсив <span class="mark">21-22 сентября</span></h2>
-    <div class="final-wrap">
-      <p class="txt">Старт 21 сентября в 19:00 по Украине. Жми кнопку: бот запишет тебя за 30 секунд, сразу отдаст оба бонуса и напомнит о старте.</p>
-      <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="cta-main">записаться бесплатно
-        <span class="mini-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    <div class="final">
+      <h2>Бесплатный интенсив<br>21-22 сентября</h2>
+      <p>Старт 21 сентября в 19:00 по Украине. Жми кнопку: бот запишет тебя за 30 секунд, сразу отдаст оба бонуса и напомнит о старте.</p>
+      <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="pill-cta">записаться бесплатно
+        <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <p class="txt" style="font-size:13px;margin-top:12px">Никакого спама. Только ссылка на эфир, бонусы и напоминания.</p>
+      <p class="small">Никакого спама. Только ссылка на эфир, бонусы и напоминания.</p>
     </div>
     <p class="foot">© 2026 Формула энергии · Информация на странице не является медицинской рекомендацией</p>
   </section>
@@ -390,8 +500,8 @@ section{padding:30px 0 8px}
 
 <div class="sticky" id="sticky">
   <div class="inner">
-    <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="cta-main">записаться бесплатно
-      <span class="mini-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="pill-cta">записаться бесплатно
+      <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
   </div>
 </div>
@@ -400,94 +510,81 @@ section{padding:30px 0 8px}
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script>
 gsap.registerPlugin(ScrollTrigger);
+const el = id => document.getElementById(id);
 
-/* хиро: каскад при загрузке */
-gsap.from('.hero-top', {y:-16, opacity:0, duration:.6, ease:'power3.out'});
-gsap.from('.hero-photo', {scale:.965, opacity:0, duration:.9, ease:'power3.out', delay:.1});
-gsap.from('.hero-name', {y:30, opacity:0, duration:.8, ease:'power3.out', delay:.35});
-gsap.from('.hero-sub, .chips, .cta-main, .proof', {y:18, opacity:0, duration:.6, ease:'power3.out', delay:.55, stagger:.12});
+/* хиро */
+gsap.from('.head', {y:-14, opacity:0, duration:.55, ease:'power3.out'});
+gsap.from('.shot.hero', {scale:.97, opacity:0, duration:.85, ease:'power3.out', delay:.08});
+gsap.from('.hero-h1', {y:26, opacity:0, duration:.75, ease:'power3.out', delay:.3});
+gsap.from('.hero-row, .pill-cta, .hero-proof', {y:18, opacity:0, duration:.6, ease:'power3.out', delay:.5, stagger:.1});
 
-/* параллакс фото-блоков */
-gsap.utils.toArray('.hero-photo, .glass-wrap, .car-photo').forEach(el => {
-  gsap.fromTo(el, {backgroundPosition:'50% 0%'}, {
-    backgroundPosition:'50% 100%', ease:'none',
-    scrollTrigger:{trigger:el, start:'top bottom', end:'bottom top', scrub:true}
-  });
+/* параллакс фото */
+gsap.utils.toArray('.shot, .car-strip').forEach(s => {
+  gsap.fromTo(s, {backgroundPosition:'50% 42%'}, {backgroundPosition:'50% 58%', ease:'none',
+    scrollTrigger:{trigger:s, start:'top bottom', end:'bottom top', scrub:true}});
 });
 
-/* стекло: подъезд снизу */
-gsap.from('.glass', {y:44, opacity:0, duration:.8, ease:'power3.out',
-  scrollTrigger:{trigger:'.glass-wrap', start:'top 78%', once:true}});
-
-/* заголовки секций */
-gsap.utils.toArray('.h-sec').forEach(el => {
-  gsap.from(el, {y:26, opacity:0, duration:.65, ease:'power3.out',
-    scrollTrigger:{trigger:el, start:'top 88%', once:true}});
+/* заголовки: строки въезжают по очереди */
+gsap.utils.toArray('.title').forEach(t => {
+  gsap.from(t.childNodes.length > 1 ? t.querySelectorAll('span.l2, span.l3') : t, {
+    x:-18, opacity:0, duration:.6, ease:'power3.out', stagger:.08,
+    scrollTrigger:{trigger:t, start:'top 88%', once:true}});
+  gsap.from(t, {y:18, opacity:0, duration:.6, ease:'power3.out',
+    scrollTrigger:{trigger:t, start:'top 90%', once:true}});
 });
 
-/* пункты раскладываются гармошкой: каждая карточка откидывается сверху вниз */
-gsap.utils.toArray('.acc').forEach(acc => {
-  gsap.from(acc.querySelectorAll('.acc-item'), {
-    rotateX:-78, y:-14, opacity:0, transformOrigin:'top center',
-    duration:.7, ease:'power3.out', stagger:.11,
-    scrollTrigger:{trigger:acc, start:'top 85%', once:true}
-  });
+/* карточки-убеждения */
+gsap.utils.toArray('.grid2').forEach(g => {
+  gsap.from(g.children, {y:32, opacity:0, scale:.97, duration:.6, ease:'power3.out', stagger:.09,
+    scrollTrigger:{trigger:g, start:'top 85%', once:true}});
 });
 
-/* пункт в центре экрана подсвечивается зелёным */
-gsap.utils.toArray('.acc-item').forEach(item => {
-  ScrollTrigger.create({trigger:item, start:'top 62%', end:'bottom 38%',
-    toggleClass:{targets:item, className:'active'}});
+/* строки: раскладываются гармошкой */
+gsap.utils.toArray('.rows').forEach(list => {
+  gsap.from(list.children, {rotateX:-72, y:-10, opacity:0, transformOrigin:'top center',
+    duration:.65, ease:'power3.out', stagger:.09,
+    scrollTrigger:{trigger:list, start:'top 86%', once:true}});
 });
 
-/* остальные блоки */
-gsap.utils.toArray('.chip, .who, .spk, .review, .client-card, .ava-row, .final-wrap').forEach(el => {
-  gsap.from(el, {y:28, opacity:0, duration:.6, ease:'power3.out',
-    scrollTrigger:{trigger:el, start:'top 90%', once:true}});
+/* стекло, сплит, услуги, спикеры, отзывы */
+gsap.from('.glass', {y:36, opacity:0, duration:.75, ease:'power3.out',
+  scrollTrigger:{trigger:'.glass', start:'top 85%', once:true}});
+gsap.utils.toArray('.split, .offer, .spk, .review, .avas, .pair, .final').forEach(x => {
+  gsap.from(x, {y:28, opacity:0, duration:.6, ease:'power3.out',
+    scrollTrigger:{trigger:x, start:'top 88%', once:true}});
 });
 
 /* карусель */
-const STORIES = [
-  {t:'Энергия', txt:'Выгорание и «жизнь на кофе». Первое, что вернулось: сон и утро без будильника на пятой попытке.', g:'linear-gradient(150deg,#DACFA8,#B39B62)', n:'[фото: история 1, из чата 59-69]'},
-  {t:'Деньги', txt:'Безденежье и «нет сил что-то менять». Появился ресурс, за ним первые клиенты и своя команда.', g:'linear-gradient(150deg,#C9D3B2,#93A46F)', n:'[фото: история 2, из чата 59-69]'},
-  {t:'Тело', txt:'Вес после родов и «ничего не помогает». Ушли отёки, вернулась фигура, без диет и зала.', g:'linear-gradient(150deg,#D8C4B2,#A98D74)', n:'[фото: история 3, из чата 59-69]'},
-  {t:'Отношения', txt:'Раздражение на всех и ноль ресурса. Когда появилась энергия, дома стало тихо и тепло.', g:'linear-gradient(150deg,#CBC2D6,#96889F)', n:'[фото: история 4, из чата 59-69]'}
+const S = [
+  {t:'Энергия', x:'Выгорание и «жизнь на кофе». Первое, что вернулось: сон и утро без будильника на пятой попытке.', g:'linear-gradient(150deg,#DFD4B4,#B69E68)', n:'[фото: история 1]'},
+  {t:'Деньги', x:'Безденежье и «нет сил что-то менять». Появился ресурс, за ним первые клиенты и своя команда.', g:'linear-gradient(150deg,#CBD6B6,#95A672)', n:'[фото: история 2]'},
+  {t:'Тело', x:'Вес после родов и «ничего не помогает». Ушли отёки, вернулась фигура, без диет и зала.', g:'linear-gradient(150deg,#DAC7B6,#AB8F78)', n:'[фото: история 3]'},
+  {t:'Отношения', x:'Раздражение на всех и ноль ресурса. Когда появилась энергия, дома стало тихо и тепло.', g:'linear-gradient(150deg,#CDC4D8,#988AA1)', n:'[фото: история 4]'}
 ];
-let ci = 0, carTimer = null;
-const el = id => document.getElementById(id);
-function drawCar(dir){
-  const s = STORIES[ci];
+let ci = 0, timer;
+function draw(dir){
+  const s = S[ci];
   el('carIdx').textContent = ci + 1;
   el('carNote').textContent = s.n;
-  const photo = el('carPhoto');
-  const layer = document.createElement('div');
-  layer.className = 'fill-layer';
-  layer.style.background = s.g;
-  layer.style.opacity = '0';
-  photo.appendChild(layer);
-  requestAnimationFrame(() => layer.style.opacity = '1');
-  setTimeout(() => {
-    photo.style.background = s.g;
-    [...photo.querySelectorAll('.fill-layer')].slice(0, -1).forEach(n => n.remove());
-  }, 500);
-  gsap.fromTo(['#carTitle', '#carText'], {x:dir * 26, opacity:0}, {x:0, opacity:1, duration:.45, ease:'power2.out', stagger:.06,
-    onStart(){ el('carTitle').textContent = s.t; el('carText').textContent = s.txt; }});
+  gsap.to('#carShot', {opacity:0, duration:.22, onComplete(){
+    el('carShot').style.background = s.g;
+    gsap.to('#carShot', {opacity:1, duration:.35});
+  }});
+  gsap.fromTo(['#carTitle','#carText'], {x:dir*24, opacity:0}, {x:0, opacity:1, duration:.45, ease:'power2.out', stagger:.06,
+    onStart(){ el('carTitle').textContent = s.t; el('carText').textContent = s.x; }});
 }
-function carGo(step){ ci = (ci + step + 4) % 4; drawCar(step); restartAuto(); }
-function restartAuto(){ clearInterval(carTimer); carTimer = setInterval(() => { ci = (ci + 1) % 4; drawCar(1); }, 4500); }
-el('carPrev').onclick = () => carGo(-1);
-el('carNext').onclick = () => carGo(1);
-restartAuto();
-
-/* пульс кнопок */
-document.querySelectorAll('.cta-main').forEach(b => b.classList.add('pulse'));
+function go(step){ ci = (ci + step + S.length) % S.length; draw(step); restart(); }
+function restart(){ clearInterval(timer); timer = setInterval(() => go(1), 5000); }
+el('carPrev').onclick = () => go(-1);
+el('carNext').onclick = () => go(1);
+restart();
 
 /* sticky */
 const sticky = el('sticky'), reg = el('reg');
 addEventListener('scroll', () => {
-  const past = scrollY > innerHeight * .9;
-  const nearForm = reg.getBoundingClientRect().top < innerHeight * .85;
-  sticky.classList.toggle('on', past && !nearForm);
+  const past = scrollY > innerHeight * .85;
+  const near = reg.getBoundingClientRect().top < innerHeight * .9;
+  sticky.classList.toggle('on', past && !near);
 }, {passive:true});
 </script>
 </body>
