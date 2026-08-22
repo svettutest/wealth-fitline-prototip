@@ -157,6 +157,13 @@ section{padding:34px 0 0}
 .belief .glyph path,.belief .glyph circle,.belief .glyph ellipse{stroke:var(--sage-glyph);fill:none;stroke-width:2.4}
 
 /* ---------- номерные строки ---------- */
+.kicker{
+  display:block;font-size:13px;font-weight:500;line-height:1.35;color:var(--ink-2);
+  letter-spacing:.02em;margin-bottom:9px;
+}
+.filter{border-radius:var(--r-lg);background:var(--sage-lite);padding:2px 18px;margin-top:16px}
+.filter p{font-size:15.5px;line-height:1.45;padding:16px 0;color:#2E302B}
+.filter p + p{border-top:1px solid rgba(0,0,0,.09)}
 .rows{margin-top:16px;display:flex;flex-direction:column;gap:4px}
 .row{
   display:flex;align-items:center;gap:14px;border-radius:var(--r-lg);
@@ -330,7 +337,8 @@ section > *{position:relative;z-index:1}
 
   <!-- ДВА ПОДАРКА -->
   <section>
-    <h2 class="title">Сразу после регистрации<span class="l2"><span class="hl">два подарка</span></span></h2>
+    <span class="kicker">сразу после регистрации</span>
+    <h2 class="title"><span class="hl">два подарка</span></h2>
     <div class="shot tall">
       <span class="ph">[превью видео: кадр с Оксаной, сообщения 51-56]</span>
       <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.4v13.2L19 12z"/></svg></span>
@@ -361,7 +369,8 @@ section > *{position:relative;z-index:1}
   <!-- ИНТРИГА -->
   <section>
     <span class="glow" style="right:-90px;top:0"></span>
-    <h2 class="title">Каждые несколько лет<span class="l2">появляется вещь,</span><span class="l3">в которую сначала <span class="hl">не верят</span></span></h2>
+    <span class="kicker">каждые несколько лет появляется вещь</span>
+    <h2 class="title">Сначала<span class="l2">не <span class="hl">верят</span></span></h2>
     <div class="split">
       <div class="shot"><span class="ph">[фото 3]</span></div>
       <div class="card">Когда-то суперфудом был подорожник, и все смеялись. Потом спирулина. Потом Оземпик: сначала скандал, теперь о нём говорит весь мир.</div>
@@ -405,7 +414,8 @@ section > *{position:relative;z-index:1}
   <!-- ЧТО ЗАБЕРЁШЬ -->
   <section>
     <span class="glow" style="left:-100px;top:40px"></span>
-    <h2 class="title">Придёшь живьём,<span class="l2">заберёшь</span><span class="l3"><span class="hl">три вещи</span></span></h2>
+    <span class="kicker">придёшь живьём, заберёшь</span>
+    <h2 class="title"><span class="hl">три вещи</span></h2>
 
     <div class="offer">
       <div class="offer-card">
@@ -472,11 +482,10 @@ section > *{position:relative;z-index:1}
   <!-- ДЛЯ КОГО -->
   <section>
     <h2 class="title">Тебе сюда,<span class="l2">если <span class="hl">ты</span></span></h2>
-    <div class="rows">
-      <div class="row grey"><span class="t" style="font-size:15px">Хочешь понять причину, а не глушить симптом очередной баночкой</span></div>
-      <div class="row"><span class="t" style="font-size:15px">Устала от совета «пей витамины»: непонятно какие, зачем и работает ли это вообще</span></div>
-      <div class="row grey"><span class="t" style="font-size:15px">Готова отдать два вечера, чтобы дальше не тратить деньги наугад</span></div>
-      <div class="row"><span class="t" style="font-size:15px">Хочешь сначала увидеть результаты живых людей, а потом решать</span></div>
+    <div class="filter">
+      <p>Хочешь причину, а не ещё одну баночку</p>
+      <p>Готова отдать два вечера, чтобы дальше не тратить деньги наугад</p>
+      <p>Хочешь сначала увидеть результаты живых людей, а потом решать</p>
     </div>
   </section>
 
