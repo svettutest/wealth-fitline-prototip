@@ -545,10 +545,15 @@ gsap.utils.toArray('.shot, .car-strip').forEach(s => {
 
 /* заголовки: строки въезжают по очереди */
 gsap.utils.toArray('.title').forEach(t => {
-  gsap.from(t.childNodes.length > 1 ? t.querySelectorAll('span.l2, span.l3') : t, {
-    x:-18, opacity:0, duration:.6, ease:'power3.out', stagger:.08,
-    scrollTrigger:{trigger:t, start:'top 88%', once:true}});
-  gsap.from(t, {y:18, opacity:0, duration:.6, ease:'power3.out',
+  /* строки въезжают только у заголовков, разбитых на l2/l3.
+     Без этой проверки два gsap.from дрались за opacity одного элемента
+     и заголовок навсегда оставался невидимым. */
+  const lines = t.querySelectorAll('span.l2, span.l3');
+  if (lines.length) {
+    gsap.from(lines, {x:-18, opacity:0, duration:.6, ease:'power3.out', stagger:.08,
+      scrollTrigger:{trigger:t, start:'top 88%', once:true}});
+  }
+  gsap.from(t, {y:18, opacity:0, duration:.6, ease:'power3.out', clearProps:'transform',
     scrollTrigger:{trigger:t, start:'top 90%', once:true}});
 });
 
