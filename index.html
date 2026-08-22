@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Формула энергии · бесплатный интенсив</title>
-<meta name="description" content="350 учёных уже подумали о твоём здоровье за тебя. Бесплатный интенсив 21-22 сентября.">
+<title>Формула энергии · бесплатный интенсив 21-22 сентября</title>
+<meta name="description" content="Бесплатный интенсив 21-22 сентября. Два дня живьём: разбор, где ты теряешь энергию, и личные вопросы.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@200;300;500;600;700&display=swap" rel="stylesheet">
@@ -131,6 +131,13 @@ section{padding:34px 0 0}
 .glass h3{font-size:16px;font-weight:700;line-height:1.15}
 .glass p{font-size:13px;line-height:1.42;color:#3A3C37}
 .glass p + p{margin-top:8px}
+.glass p b{color:var(--ink);font-weight:700}
+.play{
+  position:absolute;left:50%;top:36%;transform:translate(-50%,-50%);z-index:2;
+  width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.93);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(0,0,0,.20);
+}
+.play svg{width:24px;height:24px;margin-left:3px;color:var(--ink)}
 
 /* ---------- карточки-убеждения 2x2 ---------- */
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}
@@ -193,9 +200,9 @@ section{padding:34px 0 0}
 
 /* ---------- карточки-услуги ---------- */
 .offer{margin-top:22px}
-.offer .n{
-  font-family:'Inter Tight',sans-serif;font-weight:200;font-size:56px;line-height:.85;
-  letter-spacing:-.04em;display:block;margin-bottom:10px;
+.offer-card .n{
+  display:block;margin-bottom:9px;padding-right:56px;
+  font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--ink-2);
 }
 .offer-card{
   position:relative;border-radius:var(--r-lg);padding:20px 18px;
@@ -253,8 +260,9 @@ section{padding:34px 0 0}
 
 /* ---------- sticky ---------- */
 .sticky{
-  position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  position:fixed;left:0;right:0;bottom:0;z-index:50;padding:18px 14px calc(14px + env(safe-area-inset-bottom));
   transform:translateY(130%);transition:transform .38s cubic-bezier(.4,0,.2,1);
+  background:linear-gradient(to top,var(--white) 0%,var(--white) 58%,rgba(255,255,255,0) 100%);
 }
 .sticky.on{transform:none}
 .sticky .inner{max-width:492px;margin:0 auto}
@@ -279,15 +287,15 @@ section > *{position:relative;z-index:1}
     <span class="date-pill">21-22 сентября · 19:00</span>
   </header>
 
-  <section style="padding-top:0">
+  <section id="hero" style="padding-top:0">
     <div class="shot hero" id="heroShot">
       <span class="ph">[фото Оксаны: сообщение 51]</span>
-      <h1 class="hero-h1">350 учёных уже подумали о твоём здоровье за тебя</h1>
+      <h1 class="hero-h1">Бесплатный интенсив<br>21-22 сентября</h1>
     </div>
     <div class="hero-row">
-      <div class="hero-note">Твоя задача: один стакан утром и один вечером. От $50 в месяц</div>
+      <div class="hero-note">Два дня живьём. День 1: разбор, где ты теряешь энергию. День 2: личные вопросы. Начало в 19:00 по Украине</div>
     </div>
-    <p class="body" style="margin-top:10px">Новый вид биохакинга, который заменяет полку из 350 банок витаминов. Что это и как начать, разберём на бесплатном интенсиве.</p>
+    <p class="body" style="margin-top:10px">Новый вид биохакинга. Что это и как начать, разберём на интенсиве.</p>
     <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="pill-cta" style="margin-top:8px">занять место
       <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
@@ -313,9 +321,9 @@ section > *{position:relative;z-index:1}
         <p><b>энергия</b> это то, что реально доехало до клетки</p>
       </div>
       <div class="belief a">
-        <h4>От $50<br>в месяц</h4>
-        <svg class="glyph" viewBox="0 0 100 100"><path d="M50 20v60"/><path d="M34 36c0-9 32-9 32 0s-32 9-32 18 32 9 32 0"/></svg>
-        <p><b>вместо полки банок</b> на $2000, которая не работает</p>
+        <h4>Живьём,<br>с разбором</h4>
+        <svg class="glyph" viewBox="0 0 100 100"><circle cx="50" cy="50" r="28"/><path d="M43 38l20 12-20 12z"/></svg>
+        <p><b>запись</b> не даст тебе ни теста, ни личного разбора</p>
       </div>
     </div>
   </section>
@@ -324,14 +332,14 @@ section > *{position:relative;z-index:1}
   <section>
     <h2 class="title">Сразу после регистрации<span class="l2"><span class="hl">два подарка</span></span></h2>
     <div class="shot tall">
-      <span class="ph">[фото 2: лайфстайл Оксаны]</span>
+      <span class="ph">[превью видео: кадр с Оксаной]</span>
+      <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.4v13.2L19 12z"/></svg></span>
       <div class="glass">
         <div class="gh">
           <h3>Придут в бота за минуту</h3>
-          <span class="circle-sage"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M12 4v11m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16"/></svg></span>
         </div>
-        <p>Видео «Секрет одного порошка»: история женщины, которой 46, у которой четверо детей и которую останавливают на улице спросить, как она так выглядит.</p>
-        <p>Интерактивный разбор «Как работает клеточное питание»: почему об этом пока не говорят в аптеках и при чём тут 350 учёных.</p>
+        <p><b>Видео «Почему в 46 у меня больше сил, чем было в 30»</b>. Оксана, четверо детей, переезд в другую страну и день, когда она не смогла поднять голову с подушки.</p>
+        <p><b>Разбор «Как работает клеточное питание»</b>. Почему об этом пока не говорят в аптеках.</p>
       </div>
     </div>
   </section>
@@ -359,7 +367,7 @@ section > *{position:relative;z-index:1}
       <div class="card">Когда-то суперфудом был подорожник, и все смеялись. Потом спирулина. Потом Оземпик: сначала скандал, теперь о нём говорит весь мир.</div>
       <span class="circle-dark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </div>
-    <p class="body" style="margin-top:16px">Сейчас появился следующий инструмент. Называется клеточное питание. Его пока нет в аптеках, и им уже пользуются те, кто считает свои деньги и время: вместо полки банок на $2000 в год, один стакан утром и один вечером, от $50 в месяц.</p>
+    <p class="body" style="margin-top:16px">Сейчас появился следующий инструмент. Называется клеточное питание. Его пока нет в аптеках, и им уже пользуются те, кто считает свои деньги и время.</p>
     <a href="https://t.me/wealth_fitline_bot" target="_blank" rel="noopener" class="pill-dark" style="margin-top:16px">узнать, что это
       <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
@@ -397,12 +405,12 @@ section > *{position:relative;z-index:1}
   <!-- ЧТО ЗАБЕРЁШЬ -->
   <section>
     <span class="glow" style="left:-100px;top:40px"></span>
-    <h2 class="title">Придёшь живьём,<span class="l2">заберёшь <span class="hl">три вещи</span></span></h2>
+    <h2 class="title">Придёшь живьём,<span class="l2">заберёшь</span><span class="l3"><span class="hl">три вещи</span></span></h2>
 
     <div class="offer">
-      <span class="n">01</span>
       <div class="offer-card">
         <span class="circle-sage"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M9 3h6M10 3v5L5 17a4 4 0 0 0 4 6h6a4 4 0 0 0 4-6L14 8V3"/></svg></span>
+        <span class="n">01</span>
         <h3>Название ингредиента и протокол применения</h3>
         <p>Самый эффективный протокол на базе целого лета испытаний и больше 2000 пользователей</p>
         <div class="offer-foot">
@@ -413,9 +421,9 @@ section > *{position:relative;z-index:1}
     </div>
 
     <div class="offer">
-      <span class="n">02</span>
       <div class="offer-card">
         <span class="circle-sage"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <span class="n">02</span>
         <h3>Персональный AI-тест</h3>
         <p>Покажет, где именно ты сливаешь энергию и с чего начинать</p>
         <div class="offer-foot">
@@ -426,9 +434,9 @@ section > *{position:relative;z-index:1}
     </div>
 
     <div class="offer">
-      <span class="n">03</span>
       <div class="offer-card">
         <span class="circle-sage"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="14" rx="4"/><path d="M8 10h8M8 14h5"/></svg></span>
+        <span class="n">03</span>
         <h3>Разбор твоей ситуации</h3>
         <p>Во второй день, столько, сколько нужно</p>
         <div class="offer-foot">
@@ -461,26 +469,24 @@ section > *{position:relative;z-index:1}
   <section>
     <h2 class="title">Тебе сюда,<span class="l2">если <span class="hl">ты</span></span></h2>
     <div class="rows">
-      <div class="row grey"><span class="t" style="font-size:15px">Мама, которая живёт на кофе и держится на честном слове</span></div>
-      <div class="row"><span class="t" style="font-size:15px">Женщина 35+, у которой «всё нормально», но энергии нет</span></div>
-      <div class="row grey"><span class="t" style="font-size:15px">Эмигрантка, которой дорого и страшно болеть в новой стране</span></div>
-      <div class="row"><span class="t" style="font-size:15px">Та, кто хочет тело и лицо «до», а не «после 40»</span></div>
+      <div class="row grey"><span class="t" style="font-size:15px">Хочешь понять причину, а не глушить симптом очередной баночкой</span></div>
+      <div class="row"><span class="t" style="font-size:15px">Устала от совета «пей витамины»: непонятно какие, зачем и работает ли это вообще</span></div>
+      <div class="row grey"><span class="t" style="font-size:15px">Готова отдать два вечера, чтобы дальше не тратить деньги наугад</span></div>
+      <div class="row"><span class="t" style="font-size:15px">Хочешь сначала увидеть результаты живых людей, а потом решать</span></div>
     </div>
   </section>
 
-  <!-- ОТЗЫВЫ -->
-  <section class="center">
-    <span class="tag" style="justify-content:center">отзывы</span>
-    <div class="avas">
-      <span class="ava"></span><span class="ava"></span><span class="ava"></span><span class="ava sage">70к</span>
-    </div>
-    <div class="review" style="text-align:left">
-      <b>[заглушка: скрин отзыва из чата]</b>
-      Сюда встанут 2-3 реальных скрина из закрытого чата на 70 000 участников. Нужны скрины и три аватарки.
+  <!-- РЕЗУЛЬТАТЫ -->
+  <section>
+    <h2 class="title">Так выглядят те,<span class="l2">кто уже <span class="hl">знает</span></span></h2>
+    <p class="body" style="margin-top:14px">Фото до и после от женщин, которые узнали про клеточное питание раньше тебя.</p>
+    <div class="pair">
+      <div class="shot"><span class="ph">[до / после, героиня 1]</span><span class="cap">Оксана, 46 лет, четверо детей</span></div>
+      <div class="shot"><span class="ph">[до / после, героиня 2]</span><span class="cap">Марина</span></div>
     </div>
     <div class="pair">
-      <div class="shot"><span class="ph">[фото]</span><span class="cap">Арина, в системе с 2021 года</span></div>
-      <div class="shot"><span class="ph">[фото]</span><span class="cap">Марина, до и после</span></div>
+      <div class="shot"><span class="ph">[до / после, героиня 3]</span><span class="cap">Арина, в системе с 2021 года</span></div>
+      <div class="shot"><span class="ph">[до / после, героиня 4]</span><span class="cap">Елена</span></div>
     </div>
   </section>
 
@@ -516,7 +522,7 @@ const el = id => document.getElementById(id);
 gsap.from('.head', {y:-14, opacity:0, duration:.55, ease:'power3.out'});
 gsap.from('.shot.hero', {scale:.97, opacity:0, duration:.85, ease:'power3.out', delay:.08});
 gsap.from('.hero-h1', {y:26, opacity:0, duration:.75, ease:'power3.out', delay:.3});
-gsap.from('.hero-row, .pill-cta, .hero-proof', {y:18, opacity:0, duration:.6, ease:'power3.out', delay:.5, stagger:.1});
+gsap.from('#hero .hero-row, #hero .pill-cta, #hero .hero-proof', {y:18, opacity:0, duration:.6, ease:'power3.out', delay:.5, stagger:.1, clearProps:'transform'});
 
 /* параллакс фото */
 gsap.utils.toArray('.shot, .car-strip').forEach(s => {
